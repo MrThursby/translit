@@ -241,7 +241,7 @@ function generate_word() {
 защелка
 кубрик
 государство`.split('\n')
-    return dictonary[Math.floor(Math.random() * dictonary.length - 1)]
+    return dictonary[Math.floor(Math.random() * (dictonary.length - 1))]
         .split('')
         .map((_, index) => index === 0 ? _.toUpperCase() : _)
         .join('')
