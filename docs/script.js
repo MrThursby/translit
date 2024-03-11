@@ -8,10 +8,14 @@ let letter;
 next()
 
 $input.addEventListener('input', evt => {
-    evt.data === en[letter] && next()
+    evt.data === ru[letter] && next()
 })
 
 function next() {
-    letter = Math.floor(Math.random() * ru.length)
-    $letter.innerHTML = ru[letter]
+    const _new =  Math.floor(Math.random() * ru.length)
+
+    if (_new === letter) return next()
+
+    letter = _new
+    $letter.innerHTML = en[letter]
 }
