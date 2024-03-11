@@ -568,6 +568,10 @@ video {
   height: 100dvh;
 }
 
+.h-\[50dvh\] {
+  height: 50dvh;
+}
+
 .max-h-\[100dvh\] {
   max-height: 100dvh;
 }
