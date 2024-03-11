@@ -564,12 +564,24 @@ video {
   height: 100%;
 }
 
+.h-\[100dvh\] {
+  height: 100dvh;
+}
+
+.max-h-\[100dvh\] {
+  max-height: 100dvh;
+}
+
 .min-h-\[100dvh\] {
   min-height: 100dvh;
 }
 
 .w-full {
   width: 100%;
+}
+
+.resize {
+  resize: both;
 }
 
 .items-center {
