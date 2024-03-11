@@ -19,12 +19,8 @@ function next() {
     const nl = letter_gen.next().value
     console.log(nl)
 
-    const _new = ru.split('').indexOf(nl.toLowerCase())
-
-    if (_new === letter) return next()
-
-    letter = _new
-    $letter.innerHTML = en[letter]
+    letter = ru.split('').indexOf(nl.toLowerCase())
+    $letter.innerHTML = nl === nl.toLowerCase() ? en[letter] : en[letter].toUpperCase()
 }
 
 window.addEventListener('resize', () => {
@@ -36,7 +32,7 @@ window.addEventListener('resize', () => {
 
 function* next_letter() {
     while (true) {
-        const word =generate_word().split('')
+        const word = generate_word().split('')
 
         for (const letter of word) {
             yield letter
@@ -246,4 +242,7 @@ function generate_word() {
 кубрик
 государство`.split('\n')
     return dictonary[Math.floor(Math.random() * dictonary.length - 1)]
+        .split('')
+        .map((_, index) => index === 0 ? _.toUpperCase() : _)
+        .join('')
 }
